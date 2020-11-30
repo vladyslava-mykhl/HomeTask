@@ -37,25 +37,20 @@ console.log('Подъезд = ' + porch)
 console.log('Этаж = ' + Math.floor(1+ ((roomNumber - 1) % roomInPorch) / roomsOnFloor));
 
 console.log('Task5:')
-n = 6;
-let str = '';
+const n = 28;
 let str1 = '';
-let str2 = '';
 
- 
- for (let i = 0; i < n-1 ; i++) {
-   str = str + '-';
- }
-   for (let i = 0; i < n-1 ; i ++) {
-   str1 = str1 + '#';
-   console.log(str +  str1  + str); 
+ for (let j=0; j < n; j++){
+   if (j==0){
+      str1 = str1 + '#';
+   } else{
+      str1 = str1 + '#' + '#';
+   }
+   let str = '';
+   for (let i = 1; i < n; i ++){
+      str= str + '-';
+   }
+      console.log(str.slice(0,str.length - j) + str1 + str.slice(0, str.length - j));
 }
-
-// for (let i = 1; i < n-1 ; i++) {
-//    str2 = str2 + '##';
-//    console.log(str +  str1 + str2  + str);
-// }
-   
-
-   
+  
    

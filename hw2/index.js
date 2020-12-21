@@ -56,4 +56,3 @@ function getNameOfDay(lang, day){
   }
     console.log('Сумма двух наименьших положительных чисел из массива = ' + sumArr(numbers));
   
-  

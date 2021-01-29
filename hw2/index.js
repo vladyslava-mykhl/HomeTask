@@ -56,3 +56,19 @@ function getNameOfDay(lang, day){
   }
     console.log('Сумма двух наименьших положительных чисел из массива = ' + sumArr(numbers));
   
+
+  console.log("Task 4:")
+  
+  let firsteTest = [1, 0, 0, 0, 1];
+  let secondTest = [1, 0, 0, 1, 0];
+  let thirdTest = [1, 0, 1, 0, 1];
+  let lastTest = [1, 1, 1, 0, 0, 1];
+
+  function converter(number) {
+      return parseInt(number.join(""),2)
+  }
+
+  console.log(converter(firsteTest));
+  console.log(converter(secondTest));
+  console.log(converter(thirdTest));
+  console.log(converter(lastTest));

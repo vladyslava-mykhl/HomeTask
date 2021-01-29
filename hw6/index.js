@@ -4,12 +4,12 @@
 const array = ['Vasya', 'Petya', 'Alexey']
 
 function removeUser(arr, value) { 
-    let index = arr.indexOf(value);
-    arr.splice(index, 1);
+    arr.splice(value, 1);
     return arr;
 }
 
-removeUser(array, 1)
+removeUser(array, 0)
+
 
 //task2
 
@@ -56,7 +56,7 @@ const newArr = [
 
 function insertIntoarr(object, id) {
 	newArr.splice(id-1, 0, object);
-	return console.log(newArr);
+	return newArr;
 }
 
 insertIntoarr(firstObj, 1)
@@ -93,7 +93,8 @@ function getUsersByYear(year) {
 	return condidateArr.filter(condidate => condidate.registered.substring(0,4) == year).map(condidate => condidate._id);
 }
 	
- console.log(getUsersByYear(2017))
+const usersByYear = getUsersByYear(2017)
+console.log(usersByYear);
 
  // task8
 
@@ -101,8 +102,8 @@ function getUsersByYear(year) {
 	return condidateArr.filter(condidate => condidate.greeting.split(' ')[5] == num)
 	};
 
-	console.log(getCondidatesByUnreadMsg(5))
-
+const resultByUnreadMsg = getCondidatesByUnreadMsg(5)
+console.log(resultByUnreadMsg);
 
  //task9
 
@@ -113,16 +114,25 @@ getCondidatesByGender()
 
 //task10
 
-// const customReduce = function(callback, accum) {
-//     let index = 0;
-//     if (accum === undefined) {
-//         accum = this[0];
-//         index = 1;
-//     }
-//     for (let i = index; i < this.lenght; index++) {
-//         accum = callback((accum, this[0]), i, this);
-//     }
-//     return accum;
-// }
+const customJoin = function (split){
+	if (split === undefined) {
+        split = ',';
+	}
+	let string = '';
+	for(let i = 0; i < this.length; i++){
+		if(i == this.length - 1){
+			string = string + this[i];
+			return string;
+		}
+		string = string + this[i] + split;
+		
+	}
+	return string;
+}
 
+Object.defineProperty(Array.prototype, 'customJoin', {
+    value: customJoin,
+    enumerable: false,
+})
 
+console.log(array.customJoin(''))
